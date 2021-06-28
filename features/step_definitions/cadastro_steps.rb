@@ -6,12 +6,11 @@ end
 Quando('submeto o meu cadastro completo') do
     # pending # Write code here that turns the phrase above into concrete actions
     find("#fullName").set "Andreza Silva"
-    find("#email").set "dedezasilva@live.com"
+    find("#email").set Faker::Internet.free_email
     find("#password").set "jx7364"
     
     click_button "Cadastrar"
 
-    
  end
   
 Então('sou redirecionado para o Dashboard') do

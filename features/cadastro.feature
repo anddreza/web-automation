@@ -5,7 +5,7 @@ Funcionalidade: Cadastro
     Sendo um músico que possui equipamentos musicais
     Quero fazer o meu cadastro no RockLov
     Para que eu possa disponibilizá-los para locação
-    @temp
+    @macgvyer
     Cenario: Fazer cadastro
 
         Dado que acesso a página de cadastro
