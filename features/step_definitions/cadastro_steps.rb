@@ -1,10 +1,12 @@
+
 Dado('que acesso a página de cadastro') do
     visit "http://rocklov-web:3000/signup"
-    # sleep 10 #temporario
 end
   
 Quando('submeto o meu cadastro completo') do
-    # pending # Write code here that turns the phrase above into concrete actions
+
+    MongoDB.new.remove_user("andreza@icloud.com")
+
     find("#fullName").set "Andreza Silva"
     find("#email").set "andreza@icloud.com"
     find("#password").set "jx7364"
@@ -24,10 +26,10 @@ Quando('submeto o meu cadastro sem o nome') do
     
 end 
 
-Então('vejo a mensagem de alerta: Oops. Informe seu nome completo!') do
-    alert = find(".alert-dark")
-    expect(alert.text).to eql "Oops. Informe seu nome completo!"
-end
+# Então('vejo a mensagem de alerta: Oops. Informe seu nome completo!') do
+#     alert = find(".alert-dark")
+#     expect(alert.text).to eql "Oops. Informe seu nome completo!"
+# end
 # O que foi acrescentado na aula 10
 Quando('submeto o meu cadastro sem o email') do
     find("#fullName").set "Andreza Silva"
@@ -39,16 +41,16 @@ end
 #Acrescentada
 Quando('submeto o meu cadastro com email incorreto') do
     find("#fullName").set "Andreza Silva"
-    find("#email").set "fernando*gmail.com"
+    find("#email").set "andreza@icloud.com"
     find("#password").set "jx7364"
     
     click_button "Cadastrar"
 end
 
-Então('vejo a mensagem de alerta: Oops. Informe um email válido!') do
-    alert = find(".alert-dark")
-    expect(alert.text).to eql "Oops. Informe um email válido!"
-end
+# Então('vejo a mensagem de alerta: Oops. Informe um email válido!') do
+#     alert = find(".alert-dark")
+#     expect(alert.text).to eql "Oops. Informe um email válido!"
+# end
 
 ##sem senha 
 Quando('submeto o meu cadastro sem a senha') do                               
@@ -58,8 +60,17 @@ Quando('submeto o meu cadastro sem a senha') do
     click_button "Cadastrar"
 end                                                                           
                                                                                 
-Então('vejo a mensagem de alerta: Oops. Informe sua senha secreta!') do       
-    alert = find(".alert-dark")
-    expect(alert.text).to eql "Oops. Informe sua senha secreta!"
-end                                                                           
+# Então('vejo a mensagem de alerta: Oops. Informe sua senha secreta!') do       
+#     alert = find(".alert-dark")
+#     expect(alert.text).to eql "Oops. Informe sua senha secreta!"
+# end                                                                           
 
+Então('vejo a mensagem de alerta: {string}') do |expect_alert|
+    alert = find(".alert-dark")
+    expect(alert.text).to eql expect_alert
+end
+
+Então('vejo a mensagem de alerta:{string}') do |string|
+    pending # Write code here that turns the phrase above into concrete actions
+  end
+  
