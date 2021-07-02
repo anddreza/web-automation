@@ -9,7 +9,9 @@ Funcionalidade: Cadastro
     Cenario: Fazer cadastro
 
         Dado que acesso a página de cadastro
-        Quando submeto o meu cadastro completo
+        Quando submeto o seguinte formulário de cadastro:
+           | nome    | email             | senha|
+           | Andreza | andreza@gmail.com | jx7364|
         Então sou redirecionado para o Dashboard
 
     @tentativa_cadastro
@@ -35,4 +37,4 @@ Funcionalidade: Cadastro
 
         Dado que acesso a página de cadastro
         Quando submeto o meu cadastro sem a senha
-        Então vejo a mensagem de alerta:" Oops. Informe sua senha secreta!"
+        Então vejo a mensagem de alerta: "Oops. Informe sua senha secreta!"
