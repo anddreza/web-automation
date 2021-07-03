@@ -34,35 +34,35 @@ Então('sou redirecionado para o Dashboard') do
     expect(page).to have_css ".dashboard"
 end
 
-Quando('submeto o meu cadastro sem o nome') do
-    find("#email").set Faker::Internet.free_email
-    find("#password").set "jx7364"
+# Quando('submeto o meu cadastro sem o nome') do
+#     find("#email").set Faker::Internet.free_email
+#     find("#password").set "jx7364"
     
-    click_button "Cadastrar"
+#     click_button "Cadastrar"
     
-end 
+# end 
 
-Quando('submeto o meu cadastro sem o email') do
-    find("#fullName").set "Andreza Silva"
-    find("#password").set "jx7364"
+# Quando('submeto o meu cadastro sem o email') do
+#     find("#fullName").set "Andreza Silva"
+#     find("#password").set "jx7364"
 
-    click_button "Cadastrar"
-end
+#     click_button "Cadastrar"
+# end
   
-Quando('submeto o meu cadastro com email incorreto') do
-    find("#fullName").set "Andreza Silva"
-    find("#email").set "andreza@icloud.com"
-    find("#password").set "jx7364"
+# Quando('submeto o meu cadastro com email incorreto') do
+#     find("#fullName").set "Andreza Silva"
+#     find("#email").set "andreza@icloud.com"
+#     find("#password").set "jx7364"
     
-    click_button "Cadastrar"
-end
+#     click_button "Cadastrar"
+# end
 
-Quando('submeto o meu cadastro sem a senha') do                               
-    find("#fullName").set "Andreza Silva"
-    find("#email").set Faker::Internet.free_email
+# Quando('submeto o meu cadastro sem a senha') do                               
+#     find("#fullName").set "Andreza Silva"
+#     find("#email").set Faker::Internet.free_email
     
-    click_button "Cadastrar"
-end                                                                                                                                                       
+#     click_button "Cadastrar"
+# end                                                                                                                                                       
                                                                 
 Então('vejo a mensagem de alerta: {string}') do |expect_alert|
     alert = find(".alert-dark")
