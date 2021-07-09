@@ -17,3 +17,7 @@ Nessa parte que Papito ensina sobre web automation I (frontend)
 13. argumentos do cucumber
 14. cucumber datatable
 15. especificação viva (reuso)
+16. Esquemas do Cenário
+17. Formatando o BDD em Português
+18. Formulário de Login
+19. Mais um pouco de esquema de cenário
